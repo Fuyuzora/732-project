@@ -1,5 +1,5 @@
 # 732-project
-## MBTI: predict the MBTI personality of the commentersgiven tweets
+## MBTI: predict the MBTI personality of the commenters given tweets
 data folder structure:
 ```
 mbti:
@@ -17,7 +17,7 @@ bash processing
 ```
 
 
-## frontend: Presents MBTI classification, Networking analysis and a interactive demo
+## Frontend: Presents MBTI classification, Networking analysis and a interactive demo
 
 Install dependencies with [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/):
 ```
