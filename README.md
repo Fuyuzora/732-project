@@ -1,10 +1,12 @@
 # 732-project
-## MBTI: predict the MBTI personality of the commenters given tweets
+## MBTI: Predict the MBTI personality of the commenters given tweets
 data folder structure:
 ```
 mbti:
-    - data
-        - preprocessed
+    |- data
+        |- preprocessed
+            |- mbti.csv
+            |- tweets.csv
         mbti_1.csv
         users.csv
     preprocessing
