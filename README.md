@@ -3,14 +3,14 @@
 data folder structure:
 ```
 mbti:
+    |- preprocessing
+    |- preprocessing.py
     |- data
+        |- mbti_1.csv
+        |- users.csv
         |- preprocessed
             |- mbti.csv
             |- tweets.csv
-        mbti_1.csv
-        users.csv
-    preprocessing
-    preprocessing.py
 ```
 
 To generate data place mbti_1.csv and users.csv in the data folder and run
