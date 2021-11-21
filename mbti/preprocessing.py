@@ -30,8 +30,14 @@ def remove_at_symbol(line):
 def remove_punct(line):
     table = str.maketrans(dict.fromkeys(string.punctuation))
     line = line.translate(table)
-    return line
+    return line.lower()
 
+def vectorize_type(t):
+    if t not in t_list.keys():
+        t_list[t] = len(t_list)
+    return t_list[t]
+
+t_list = {}
 tweets = tweets.loc[tweets['missing']==0]
 tweets['last_post_text'] = tweets['last_post_text'].astype(str)
 tweets['last_post_text'] = tweets['last_post_text'].apply(remove_url)
@@ -42,8 +48,9 @@ mbti['posts'] = mbti['posts'].apply(remove_url)
 mbti = mbti.dropna()
 tweets['last_post_text'] = tweets['last_post_text'].apply(remove_at_symbol).apply(remove_punct)
 mbti['posts'] = mbti['posts'].apply(remove_at_symbol).apply(remove_punct)
+mbti['label'] = mbti['type'].apply(vectorize_type)
 
 if not os.path.exists(output_path):
     os.mkdir(output_path)
-tweets[['account_id', 'last_post_text']].to_csv(output_path+'/tweets.csv')
-mbti.to_csv(output_path+'/mbti.csv')
+tweets[['account_id', 'last_post_text']].to_csv(output_path+'/tweets.csv', index=False)
+mbti.to_csv(output_path+'/mbti.csv', index=False)
