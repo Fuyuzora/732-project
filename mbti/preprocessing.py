@@ -23,6 +23,12 @@ def vectorize_type(t):
         t_list[t] = len(t_list)
     return t_list[t]
 
+def binary_split_label(type, ind):
+    base = "INTJ"
+    if type[ind] == base[ind]:
+        return 1
+    return 0
+
 t_list = {}
 tweets = tweets.loc[tweets['missing']==0]
 tweets['last_post_text'] = tweets['last_post_text'].astype(str)
@@ -37,4 +43,6 @@ if not os.path.exists(output_path):
 tweets[['account_id', 'last_post_text']].to_csv(output_path+'/tweets.csv', index=False)
 print('Created {} entries for tweets dataset'.format(len(tweets)))
 print('Created {} entries for mbti dataset'.format(len(mbti)))
+for x in range(4):
+    mbti[f'label{x+1}'] = mbti['type'].apply(binary_split_label, args=(x, ))
 mbti.to_csv(output_path+'/mbti.csv', index=False)
