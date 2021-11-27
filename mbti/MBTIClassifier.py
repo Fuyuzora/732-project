@@ -1,10 +1,11 @@
-from transformers import BertModel
+from transformers import BertModel, RobertaModel
 import torch
 
 class MBTIClassifier(torch.nn.Module):
-    def __init__(self, model_path):
+    def __init__(self):
         super(MBTIClassifier, self).__init__()
-        self.l1 = BertModel.from_pretrained(model_path)
+        # self.l1 = BertModel.from_pretrained('bert-base-uncased')
+        self.l1 = RobertaModel.from_pretrained('roberta-base')
         self.pre_classifier = torch.nn.Linear(768, 768)
         self.dropout = torch.nn.Dropout(0.3)
         self.classifier = torch.nn.Linear(768, 16)
