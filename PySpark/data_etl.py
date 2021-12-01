@@ -58,6 +58,7 @@ def main():
     twitter = twitter.withColumn('account_created_at',twitter['account_created_at'].cast(types.TimestampType()))
     twitter = twitter.withColumn('active_date', functions.datediff(twitter['last_post_created_at'],twitter['account_created_at'])  )
     twitter = twitter.select('account_id','followers_count','following_count','statuses_count','listed_count','active_date')
+    twitter = twitter.withColumnRenamed('statuses_count','post_count')
     twitter.printSchema()
     print(twitter.count())
     twitter.write.json('ETL_result', mode='overwrite')
