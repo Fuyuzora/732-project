@@ -1,3 +1,6 @@
 frontend/node_modules
 mbti/data
+mbti/models
 .DS_Store
+mbti/.vscode
+mbti/__pycache__
