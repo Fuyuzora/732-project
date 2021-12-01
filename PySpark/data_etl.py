@@ -61,7 +61,7 @@ def main():
     twitter = twitter.withColumnRenamed('statuses_count','post_count')
     twitter.printSchema()
     print(twitter.count())
-    twitter.write.json('ETL_result', mode='overwrite')
+    twitter.write.csv('ETL_result', mode='overwrite')
 
 
     
