@@ -61,21 +61,21 @@ print(features_norm.head())
 # print(X_train.head())
 
 # %%
-# sum of square distances. insertia
-SSE = []
-for cluster in range(1,20):
-    kmeans = KMeans(n_clusters = cluster, init='k-means++')
-    kmeans.fit(features_norm)
-    SSE.append(kmeans.inertia_)
+# # sum of square distances. insertia
+# SSE = []
+# for cluster in range(1,20):
+#     kmeans = KMeans(n_clusters = cluster, init='k-means++')
+#     kmeans.fit(features_norm)
+#     SSE.append(kmeans.inertia_)
 
-# sse elbow plot
-sse_df = pd.DataFrame({'Cluster':range(1,20), 'SSE':SSE})
-plt.figure(figsize=(12,6))
-plt.plot(sse_df['Cluster'], sse_df['SSE'], marker='o')
-plt.title('Optimal Number of Clusters')
-plt.xlabel('Number of clusters')
-plt.ylabel('Inertia')
-plt.show()
+# # sse elbow plot
+# sse_df = pd.DataFrame({'Cluster':range(1,20), 'SSE':SSE})
+# plt.figure(figsize=(12,6))
+# plt.plot(sse_df['Cluster'], sse_df['SSE'], marker='o')
+# plt.title('Optimal Number of Clusters')
+# plt.xlabel('Number of clusters')
+# plt.ylabel('Inertia')
+# plt.show()
 
 # %%
 # use PCA to convert dimension to 2
