@@ -29,7 +29,9 @@ Write a brief discription and get starting code here
 ## K-Means
 
 To run the .py file:
+```
 python3 kmeans.py
+```
 
 ## Frontend: Presents MBTI classification, Networking analysis and a interactive demo
 
