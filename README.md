@@ -2,6 +2,10 @@
 ## MBTI: Predict the MBTI personalities of the commenters given tweets
 data folder structure:
 ```
+kmeans:
+    |- fig_kmeans.png
+    |- kmeans.ipynb
+    |- kmeans.py
 mbti:
     |- preprocessing
     |- preprocessing.py
@@ -21,6 +25,11 @@ bash processing
 ## Twitter Networking Analysis:
 
 Write a brief discription and get starting code here
+
+## K-Means
+
+To run the .py file:
+python3 kmeans.py
 
 ## Frontend: Presents MBTI classification, Networking analysis and a interactive demo
 
