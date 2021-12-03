@@ -114,7 +114,7 @@ for i in uniq:
    plt.scatter(data[pred == i , 0], data[pred == i , 1], s = 2, label = i)
 plt.scatter(centers[:,0], centers[:,1], marker='x', color='k')
 plt.legend()
-plt.show()
+# plt.show()
 
 # %%
 frame = features_norm.copy()
@@ -126,7 +126,7 @@ print(frame.head())
 
 center=frame.groupby(['cluster']).mean()
 print(center.head(20))
-
+center.to_json('center_location.json', orient='records', lines=True)
 
 
 # %%
