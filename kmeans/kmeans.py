@@ -4,8 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-# from sklearn.preprocessing import MinMaxScaler
-from sklearn.preprocessing import Normalizer
+from sklearn.preprocessing import MinMaxScaler
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 # from sklearn.model_selection import train_test_split 
@@ -33,13 +32,13 @@ df.isnull().sum()
 # %%
 df.dropna(subset = ['account_id'], inplace=True)
 df['active_date'].fillna(df['active_date'].mean(), inplace=True)
-df.isnull().sum()
-
-# %%
-df.head()
-
-# %%
 df.info()
+
+# %%
+df['post_count'] = df['post_count'].astype(float)
+df['listed_count'] = df['listed_count'].astype(float)
+print(df.info())
+print(df.head())
 
 # %%
 features = df.iloc[:,1:]
@@ -47,35 +46,10 @@ print(features.info())
 print(features.head())
 
 # %%
-features_norm = Normalizer().fit_transform(features)
+features_norm = MinMaxScaler().fit_transform(features)
 features_norm = pd.DataFrame(features_norm, columns = list(features.columns))
 print('Normalized Features')
 print(features_norm.head())
-
-# %%
-# X_train, X_test = train_test_split(features_norm, test_size=0.2)
-# X_train = X_train.iloc[:,1:]
-# X_test = X_test.iloc[:,1:]
-# print(X_train.shape)
-# print(X_test.shape)
-# print(X_train.head())
-
-# %%
-# # sum of square distances. insertia
-# SSE = []
-# for cluster in range(1,20):
-#     kmeans = KMeans(n_clusters = cluster, init='k-means++')
-#     kmeans.fit(features_norm)
-#     SSE.append(kmeans.inertia_)
-
-# # sse elbow plot
-# sse_df = pd.DataFrame({'Cluster':range(1,20), 'SSE':SSE})
-# plt.figure(figsize=(12,6))
-# plt.plot(sse_df['Cluster'], sse_df['SSE'], marker='o')
-# plt.title('Optimal Number of Clusters')
-# plt.xlabel('Number of clusters')
-# plt.ylabel('Inertia')
-# plt.show()
 
 # %%
 # use PCA to convert dimension to 2
@@ -102,16 +76,22 @@ plt.legend()
 plt.show()
 
 # %%
-frame = features_norm.copy()
+frame = features.copy()
 frame['cluster'] = pred
+print('Cluster counts')
 print(frame['cluster'].value_counts())
-print(frame.head())
 
 # %%
+center = frame.groupby(['cluster']).mean()
+center['cluster'] = uniq
+center = center.sort_values(['followers_count','listed_count','post_count'], ascending=True)
+# add ranking
+center['rank'] = uniq + 1
+center.to_json('center_location.json', orient='records', lines=True)
 
 
 # %%
-
+center
 
 # %%
 
