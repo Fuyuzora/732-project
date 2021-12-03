@@ -5,7 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 # from sklearn.preprocessing import MinMaxScaler
-from sklearn.preprocessing import Normalizer
+from sklearn.preprocessing import Normalizer, StandardScaler
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 # from sklearn.model_selection import train_test_split 
@@ -46,11 +46,26 @@ features = df.iloc[:,1:]
 print(features.info())
 print(features.head())
 
+
+remain_col = [ 'followers_count', 'following_count', \
+    'post_count', 'listed_count', 'active_date']
+means = []
+stds = []
+
+for i in range(len(remain_col)):
+    column=features[remain_col[i]]
+    means.append(column.mean())
+    stds.append(column.std())
+
+
 # %%
-features_norm = Normalizer().fit_transform(features)
+features_norm = StandardScaler().fit_transform(features)
+# features_norm = features_norm.T
 features_norm = pd.DataFrame(features_norm, columns = list(features.columns))
 print('Normalized Features')
 print(features_norm.head())
+
+
 
 # %%
 # X_train, X_test = train_test_split(features_norm, test_size=0.2)
@@ -105,7 +120,14 @@ plt.show()
 frame = features_norm.copy()
 frame['cluster'] = pred
 print(frame['cluster'].value_counts())
+for i in range(len(remain_col)):
+    frame[remain_col[i]] = frame[remain_col[i]]*stds[i]+means[i]
 print(frame.head())
+
+center=frame.groupby(['cluster']).mean()
+print(center.head(20))
+
+
 
 # %%
 
