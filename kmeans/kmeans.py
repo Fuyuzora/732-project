@@ -82,7 +82,7 @@ print('Cluster counts')
 print(frame['cluster'].value_counts())
 
 # %%
-frame
+frame.head(20)
 
 # %%
 center = frame.groupby(['cluster']).mean()
