@@ -82,19 +82,33 @@ print('Cluster counts')
 print(frame['cluster'].value_counts())
 
 # %%
-frame.head(20)
-
-# %%
 center = frame.groupby(['cluster']).mean()
 center['cluster'] = uniq
 center = center.sort_values(['followers_count','listed_count','post_count'], ascending=True)
 # add ranking
 center['rank'] = uniq + 1
+# export json
 center.to_json('center_location.json', orient='records', lines=True)
 
+center
 
 # %%
-center
+ranking = pd.DataFrame(columns=['cluster','rank'])
+ranking['cluster'] = center['cluster']
+ranking['rank'] = center['rank']
+ranking = np.array(ranking)
+ranking
+
+# %%
+frame['rank'] = 0
+for i in range(0,len(ranking)):
+    frame['rank'].loc[frame['cluster'] == ranking[i][0]] = ranking[i][1]
+
+# %%
+frame.head(30)
+
+# %%
+
 
 # %%
 
