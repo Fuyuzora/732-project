@@ -108,7 +108,7 @@ for i in range(0,len(ranking)):
 frame.head(30)
 
 # %%
-
+frame.to_csv('frame_with_ranking.csv')
 
 # %%
 
