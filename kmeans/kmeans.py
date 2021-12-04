@@ -82,6 +82,9 @@ print('Cluster counts')
 print(frame['cluster'].value_counts())
 
 # %%
+frame
+
+# %%
 center = frame.groupby(['cluster']).mean()
 center['cluster'] = uniq
 center = center.sort_values(['followers_count','listed_count','post_count'], ascending=True)
