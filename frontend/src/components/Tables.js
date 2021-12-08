@@ -1,12 +1,12 @@
 
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faAngleUp, faArrowDown, faArrowUp, faEdit, faEllipsisH, faExternalLinkAlt, faEye, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faAngleUp, faEdit, faEllipsisH, faExternalLinkAlt, faEye, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { Col, Row, Nav, Card, Image, Button, Table, Dropdown, ProgressBar, Pagination, ButtonGroup } from '@themesberg/react-bootstrap'
 import { Link } from 'react-router-dom'
 
 import { Routes } from "../routes"
-import { pageVisits, pageTraffic, pageRanking } from "../data/tables"
+import { pageTraffic, pageRanking } from "../data/tables"
 import transactions from "../data/transactions"
 import commands from "../data/commands"
 
@@ -27,10 +27,11 @@ const ValueChange = ({ value, suffix }) => {
 export const PageVisitsTable = (props) => {
   const { data } = props
   const TableRow = (props) => {
-    const { id, mbtiSimilarity, influenceDistance, friendPossibility } = props
+    console.log(props)
+    const { label, mbtiSimilarity, influenceDistance, friendPossibility } = props
     return (
       <tr>
-        <th scope="row">{id}</th>
+        <th scope="row">{label}</th>
         <td>{mbtiSimilarity}</td>
         <td>{influenceDistance}</td>
         <td>{friendPossibility}</td>

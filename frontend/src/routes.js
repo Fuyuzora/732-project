@@ -1,9 +1,9 @@
 
 export const Routes = {
     // pages
-    MBTI: { path: "/" },
+    MBTI: { path: "/mbti" },
     Networking: { path: "/networking" },
-    Invoice: { path: "/examples/invoice" },
     Demo: { path: "/demo" },
-    NotFound: { path: "/examples/404" },
+    Conclusion: {path: '/conclusion'},
+    Intro: {path: "/"},
 };

@@ -1,5 +1,6 @@
 
-import { faDesktop, faMobileAlt, faTabletAlt } from '@fortawesome/free-solid-svg-icons';
+import { faDesktop, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
+import NetworkingData from './NetworkingData';
 
 const trafficShares = [
     { id: 1, label: "Desktop", value: 60, color: "secondary", icon: faDesktop },
@@ -11,7 +12,17 @@ const totalOrders = [
     { id: 2, label: "August", value: [2, 3, 4, 8, 1, 2], color: "secondary" }
 ];
 
+const influenceDistrib = NetworkingData.slice(0, 15).map(el => {
+    return {
+        id: el.id,
+        label: el.data.label,
+        value: el.data.influenceDistrib*100,
+        icon: faMobileAlt
+    }
+})
+
 export {
     trafficShares,
-    totalOrders
+    totalOrders,
+    influenceDistrib,
 };

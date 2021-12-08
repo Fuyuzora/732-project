@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import ReactFlow, {
     removeElements,
     addEdge,
@@ -38,13 +38,13 @@ const NodeGraph = () => {
         reactFlowInstance.fitView()
     }
 
-    const download = (content, fileName, contentType) => {
-        var a = document.createElement("a")
-        var file = new Blob([content], { type: contentType })
-        a.href = URL.createObjectURL(file)
-        a.download = fileName
-        a.click()
-    }
+    // const download = (content, fileName, contentType) => {
+    //     var a = document.createElement("a")
+    //     var file = new Blob([content], { type: contentType })
+    //     a.href = URL.createObjectURL(file)
+    //     a.download = fileName
+    //     a.click()
+    // }
 
     const onConnect = (params) =>
         setElements((els) => addEdge({ ...params, type: 'floating', arrowHeadType: ArrowHeadType.Arrow }, els))
@@ -59,13 +59,13 @@ const NodeGraph = () => {
         console.log(node.position)
     }
 
-    const onSave = useCallback(() => {
-        if (rfInstance) {
-            const flow = rfInstance.toObject()
-            var jsonData = JSON.stringify(flow)
-            download(jsonData, 'json.txt', 'text/plain')
-        }
-    }, [rfInstance])
+    // const onSave = useCallback(() => {
+    //     if (rfInstance) {
+    //         const flow = rfInstance.toObject()
+    //         var jsonData = JSON.stringify(flow)
+    //         download(jsonData, 'json.txt', 'text/plain')
+    //     }
+    // }, [rfInstance])
 
 
     return (
@@ -98,7 +98,7 @@ const NodeGraph = () => {
                     <Modal.Body>
                         <p>Name: {currentNode.data.label}</p>
                         <p>Personality: {currentNode.data.mbti}</p>
-                        <p>Reddit post count: {currentNode.data.redditPosts}</p>
+                        <p>Twitter post count: {currentNode.data.tweets}</p>
                         <p>Influence Index: {currentNode.data.influenceIndex}</p>
                     </Modal.Body>
                     <Modal.Footer>

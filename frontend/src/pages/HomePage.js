@@ -3,9 +3,11 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import { Routes } from "../routes";
 
 // pages
-import DashboardOverview from "./MBTI";
-import Transactions from "./Networking";
-import Settings from "./Demo";
+import MBTI from "./MBTI";
+import Networking from "./Networking";
+import Demo from "./Demo";
+import Intro from './Intro';
+import Conclusion from './Conclusion'
 
 // documentation pages
 
@@ -37,9 +39,11 @@ const RouteWithSidebar = ({ component: Component, ...rest }) => {
 
 export default () => (
   <Switch>
-    <RouteWithSidebar exact path={Routes.MBTI.path} component={DashboardOverview} />
-    <RouteWithSidebar exact path={Routes.Networking.path} component={Transactions} />
-    <RouteWithSidebar exact path={Routes.Demo.path} component={Settings} />
-    <Redirect to={Routes.MBTI.path} />
+    <RouteWithSidebar exact path={Routes.Intro.path} component={Intro} />
+    <RouteWithSidebar exact path={Routes.MBTI.path} component={MBTI} />
+    <RouteWithSidebar exact path={Routes.Networking.path} component={Networking} />
+    <RouteWithSidebar exact path={Routes.Demo.path} component={Demo} />
+    <RouteWithSidebar exact path={Routes.Conclusion.path} component={Conclusion} />
+    <Redirect to={Routes.Intro.path} />
   </Switch>
 );

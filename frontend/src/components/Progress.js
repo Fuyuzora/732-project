@@ -2,7 +2,7 @@ import React from "react";
 import { ProgressBar } from '@themesberg/react-bootstrap';
 
 export default (props) => {
-  const { label, variant, value, type = "label", size = "md", now=100 } = props;
+  const { label, variant, type = "label", size = "md", now=100 } = props;
   const textColor = type === "label" ? variant : "white";
   const bgColorClass = type === "tooltip" ? `bg-${variant}` : "";
 

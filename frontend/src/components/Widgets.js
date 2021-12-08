@@ -1,15 +1,15 @@
 
-import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faAngleUp, faChartArea, faChartBar, faChartLine, faFlagUsa, faFolderOpen, faGlobeEurope, faPaperclip, faUserPlus } from '@fortawesome/free-solid-svg-icons';
-import { faAngular, faBootstrap, faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
-import { Col, Row, Card, Image, Button, ListGroup, ProgressBar } from '@themesberg/react-bootstrap';
-import { CircleChart, BarChart, SalesValueChart, SalesValueChartphone } from "./Charts";
+import React from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDown, faAngleUp, faChartArea, faChartBar, faChartLine, faFlagUsa, faFolderOpen, faGlobeEurope, faPaperclip, faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import { faAngular, faBootstrap, faReact, faVuejs } from "@fortawesome/free-brands-svg-icons"
+import { Col, Row, Card, Image, Button, ListGroup, ProgressBar } from '@themesberg/react-bootstrap'
+import { CircleChart, BarChart, SalesValueChart, SalesValueChartphone } from "./Charts"
 
-import Profile1 from "../assets/img/team/profile-picture-1.jpg";
-import ProfileCover from "../assets/img/profile-cover.jpg";
+import Profile1 from "../assets/img/team/profile-picture-1.jpg"
+import ProfileCover from "../assets/img/profile-cover.jpg"
 
-import teamMembers from "../data/teamMembers";
+import teamMembers from "../data/teamMembers"
 
 
 export const ProfileCardWidget = () => {
@@ -28,11 +28,11 @@ export const ProfileCardWidget = () => {
         <Button variant="secondary" size="sm">Send Message</Button>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 export const ChoosePhotoWidget = (props) => {
-  const { title, photo } = props;
+  const { title, photo } = props
 
   return (
     <Card border="light" className="bg-white shadow-sm mb-4">
@@ -59,13 +59,11 @@ export const ChoosePhotoWidget = (props) => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 export const CounterWidget = (props) => {
-  const { icon, iconColor, category, title, period, percentage } = props;
-  const percentageIcon = percentage < 0 ? faAngleDown : faAngleUp;
-  const percentageColor = percentage < 0 ? "text-danger" : "text-success";
+  const { icon, iconColor, label, tweets, mbti, influenceIndex } = props
 
   return (
     <Card border="light" className="shadow-sm">
@@ -76,32 +74,29 @@ export const CounterWidget = (props) => {
               <FontAwesomeIcon icon={icon} />
             </div>
             <div className="d-sm-none">
-              <h5>{category}</h5>
-              <h3 className="mb-1">{title}</h3>
+              <h5>{label}</h5>
+              <h3 className="mb-1">{tweets}</h3>
             </div>
           </Col>
           <Col xs={12} xl={7} className="px-xl-0">
             <div className="d-none d-sm-block">
-              <h5>{category}</h5>
-              <h3 className="mb-1">{title}</h3>
+              <h5>{label}</h5>
+              <h3 className="mb-1">{tweets}</h3>
             </div>
-            <small>{period}, <FontAwesomeIcon icon={faGlobeEurope} size="xs" /> WorldWide</small>
-            <div className="small mt-2">
-              <FontAwesomeIcon icon={percentageIcon} className={`${percentageColor} me-1`} />
-              <span className={`${percentageColor} fw-bold`}>
-                {percentage}%
-              </span> Since last month
-            </div>
+            <small>{mbti}, Influencial Group {influenceIndex}</small>
           </Col>
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 export const CircleChartWidget = (props) => {
-  const { title, data = [] } = props;
-  const series = data.map(d => d.value);
+  const { title, data = [] } = props
+  const series = data.map(d => d.value)
+  const data1 = data.slice(0, 5)
+  const data2 = data.slice(5, 10)
+  const data3 = data.slice(10, 15)
 
   return (
     <Card border="light" className="shadow-sm">
@@ -112,26 +107,45 @@ export const CircleChartWidget = (props) => {
           </Col>
           <Col xs={12} xl={6} className="px-xl-0">
             <h5 className="mb-3">{title}</h5>
-
-            {data.map(d => (
-              <h6 key={`circle-element-${d.id}`} className="fw-normal text-gray">
-                <FontAwesomeIcon icon={d.icon} className={`icon icon-xs text-${d.color} w-20 me-1`} />
-                {` ${d.label} `}{`${d.value}%`}
-              </h6>
-            ))}
+            <Row>
+              <Col>
+                {data1.map(d => (
+                  <h6 key={`circle-element-${d.id}`} className="fw-normal text-gray">
+                    <FontAwesomeIcon icon={d.icon} className={`icon icon-xs text-${d.color} w-20 me-1`} />
+                    {` ${d.label} `}{`${d.value.toFixed(2)}%`}
+                  </h6>
+                ))}
+              </Col>
+              <Col>
+                {data2.map(d => (
+                  <h6 key={`circle-element-${d.id + 1}`} className="fw-normal text-gray">
+                    <FontAwesomeIcon icon={d.icon} className={`icon icon-xs text-${d.color} w-20 me-1`} />
+                    {` ${d.label} `}: {`${d.value.toFixed(2)}%`}
+                  </h6>
+                ))}
+              </Col>
+              <Col>
+                {data3.map(d => (
+                  <h6 key={`circle-element-${d.id + 1}`} className="fw-normal text-gray">
+                    <FontAwesomeIcon icon={d.icon} className={`icon icon-xs text-${d.color} w-20 me-1`} />
+                    {` ${d.label} `}: {`${d.value.toFixed(2)}%`}
+                  </h6>
+                ))}
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 export const BarChartWidget = (props) => {
-  const { title, value, percentage, data = [] } = props;
-  const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  const series = data.map(d => d.value);
-  const percentageIcon = percentage < 0 ? faAngleDown : faAngleUp;
-  const percentageColor = percentage < 0 ? "text-danger" : "text-success";
+  const { title, value, percentage, data = [] } = props
+  const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  const series = data.map(d => d.value)
+  const percentageIcon = percentage < 0 ? faAngleDown : faAngleUp
+  const percentageColor = percentage < 0 ? "text-danger" : "text-success"
 
   return (
     <Card border="light" className="shadow-sm">
@@ -159,20 +173,20 @@ export const BarChartWidget = (props) => {
         <BarChart labels={labels} series={series} />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 export const TeamMembersWidget = () => {
   const TeamMember = (props) => {
-    const { name, statusKey, image, icon, btnText } = props;
+    const { name, statusKey, image, icon, btnText } = props
     const status = {
       online: { color: "success", label: "Online" },
       inMeeting: { color: "warning", label: "In a meeting" },
       offline: { color: "danger", label: "Offline" }
-    };
+    }
 
     const statusColor = status[statusKey] ? status[statusKey].color : 'danger'
-      , statusLabel = status[statusKey] ? status[statusKey].label : 'Offline';
+      , statusLabel = status[statusKey] ? status[statusKey].label : 'Offline'
 
     return (
       <ListGroup.Item className="px-0">
@@ -196,8 +210,8 @@ export const TeamMembersWidget = () => {
           </Col>
         </Row>
       </ListGroup.Item>
-    );
-  };
+    )
+  }
 
   return (
     <Card border="light" className="shadow-sm">
@@ -211,13 +225,13 @@ export const TeamMembersWidget = () => {
         </ListGroup>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 export const ProgressTrackWidget = () => {
   const Progress = (props) => {
-    const { title, percentage, icon, color, last = false } = props;
-    const extraClassName = last ? "" : "mb-2";
+    const { title, percentage, icon, color, last = false } = props
+    const extraClassName = last ? "" : "mb-2"
 
     return (
       <Row className={`align-items-center ${extraClassName}`}>
@@ -238,8 +252,8 @@ export const ProgressTrackWidget = () => {
           </div>
         </Col>
       </Row>
-    );
-  };
+    )
+  }
 
   return (
     <Card border="light" className="shadow-sm">
@@ -255,8 +269,8 @@ export const ProgressTrackWidget = () => {
         <Progress last title="Volt - Dashboard" color="purple" icon={faBootstrap} percentage={34} />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 export const RankingWidget = () => {
   return (
@@ -300,13 +314,13 @@ export const RankingWidget = () => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 export const SalesValueWidget = (props) => {
-  const { title, value, percentage } = props;
-  const percentageIcon = percentage < 0 ? faAngleDown : faAngleUp;
-  const percentageColor = percentage < 0 ? "text-danger" : "text-success";
+  const { title, value, percentage } = props
+  const percentageIcon = percentage < 0 ? faAngleDown : faAngleUp
+  const percentageColor = percentage < 0 ? "text-danger" : "text-success"
 
   return (
     <Card className="bg-secondary-alt shadow-sm">
@@ -333,13 +347,13 @@ export const SalesValueWidget = (props) => {
         <SalesValueChart />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 export const SalesValueWidgetPhone = (props) => {
-  const { title, value, percentage } = props;
-  const percentageIcon = percentage < 0 ? faAngleDown : faAngleUp;
-  const percentageColor = percentage < 0 ? "text-danger" : "text-success";
+  const { title, value, percentage } = props
+  const percentageIcon = percentage < 0 ? faAngleDown : faAngleUp
+  const percentageColor = percentage < 0 ? "text-danger" : "text-success"
 
   return (
     <Card className="bg-secondary-alt shadow-sm">
@@ -366,8 +380,8 @@ export const SalesValueWidgetPhone = (props) => {
         <SalesValueChartphone />
       </Card.Body>
     </Card>
-  );
-};
+  )
+}
 
 export const AcquisitionWidget = () => {
   return (
@@ -397,5 +411,5 @@ export const AcquisitionWidget = () => {
         </div>
       </Card.Body>
     </Card>
-  );
-};
+  )
+}

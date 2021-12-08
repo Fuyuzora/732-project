@@ -4,7 +4,7 @@ import SimpleBar from 'simplebar-react'
 import { useLocation } from "react-router-dom"
 import { CSSTransition } from 'react-transition-group'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes, faUserFriends, faProjectDiagram, faBrain, faCogs} from "@fortawesome/free-solid-svg-icons"
+import { faTimes, faUserFriends, faProjectDiagram, faBrain, faCogs, faInfoCircle, faBook} from "@fortawesome/free-solid-svg-icons"
 import { Nav, Badge, Image, Dropdown } from '@themesberg/react-bootstrap'
 import { Link } from 'react-router-dom'
 
@@ -59,9 +59,11 @@ export default (props = {}) => {
             </div>
             <Nav className="flex-column pt-3 pt-md-0">
               <NavItem title="Friend Finder" icon={faUserFriends} />
+              <NavItem title="Introduction" link={Routes.Intro.path} icon={faInfoCircle} />
               <NavItem title="MBTI Classification" link={Routes.MBTI.path} icon={faBrain} />
               <NavItem title="Networking" icon={faProjectDiagram} link={Routes.Networking.path} />
               <NavItem title="Demo" icon={faCogs} link={Routes.Demo.path} />
+              <NavItem title="Conclusion" icon={faBook} link={Routes.Conclusion.path} />
               <Dropdown.Divider className="my-3 border-indigo" />
             </Nav>
           </div>

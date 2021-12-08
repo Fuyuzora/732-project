@@ -14,28 +14,4 @@ import { Routes } from "../routes"
 
 
 export default [
-    {
-        "id": 1,
-        "name": "Overview",
-        "image": OverviewImg,
-        "link": Routes.DashboardOverview.path
-    },
-    {
-        "id": 2,
-        "name": "Transactions",
-        "image": TransactionsImg,
-        "link": Routes.Transactions.path
-    },
-    {
-        "id": 3,
-        "name": "Settings",
-        "image": SettingsImg,
-        "link": Routes.Settings.path
-    },
-    {
-        "id": 9,
-        "name": "404",
-        "image": NotFoundImg,
-        "link": Routes.NotFound.path
-    }
 ]

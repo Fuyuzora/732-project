@@ -3,10 +3,11 @@ export default [
     {
         id: "0",
         data: {
-            label: "0",
-            mbti: "INTJ",
-            redditPosts: 50,
-            influenceIndex: 0.32
+            label: "Bob",
+            mbti: "INFP",
+            tweets: 2,
+            influenceIndex: 2,
+            influenceDistrib: 15765/134978
         },
         position: {
             "x": 435.5,
@@ -18,10 +19,11 @@ export default [
     {
         id: "1",
         data: {
-            label: "1",
-            mbti: "INFJ",
-            redditPosts: 20,
-            influenceIndex: 0.23
+            label: "Alex",
+            mbti: "ENTJ",
+            tweets: 119018,
+            influenceIndex: 15,
+            influenceDistrib: 3465/134978
         },
         position: {
             "x": 595.5,
@@ -33,10 +35,11 @@ export default [
     {
         id: "2",
         data: {
-            label: "2",
-            mbti: "ENTJ",
-            redditPosts: 450,
-            influenceIndex: 1
+            label: "Kate",
+            mbti: "INFJ",
+            tweets: 14,
+            influenceIndex: 3,
+            influenceDistrib: 7805/134978
         },
         position: {
             "x": 1090.5,
@@ -48,10 +51,11 @@ export default [
     {
         id: "3",
         data: {
-            label: "3",
-            mbti: "ENTJ",
-            redditPosts: 450,
-            influenceIndex: 1
+            label: "Lei",
+            mbti: "INTP",
+            tweets: 42,
+            influenceIndex: 5,
+            influenceDistrib: 4509/134978
         },
         position: {
             "x": 891.5,
@@ -63,10 +67,11 @@ export default [
     {
         id: "4",
         data: {
-            label: "4",
-            mbti: "ENTJ",
-            redditPosts: 450,
-            influenceIndex: 1
+            label: "Bruce",
+            mbti: "ENFP",
+            tweets: 2,
+            influenceIndex: 2,
+            influenceDistrib: 38271/134978
         },
         position: {
             "x": 1075.5,
@@ -78,10 +83,11 @@ export default [
     {
         id: "5",
         data: {
-            label: "5",
-            mbti: "ENTJ",
-            redditPosts: 450,
-            influenceIndex: 1
+            label: "John",
+            mbti: "ENTP",
+            tweets: 4,
+            influenceIndex: 1,
+            influenceDistrib: 5243/134978
         },
         position: {
             "x": 1079.5,
@@ -93,10 +99,11 @@ export default [
     {
         id: "6",
         data: {
-            label: "6",
-            mbti: "ENTJ",
-            redditPosts: 450,
-            influenceIndex: 1
+            label: "Mary",
+            mbti: "ENFJ",
+            tweets: 7755,
+            influenceIndex: 13,
+            influenceDistrib: 6687/134978
         },
         position: {
             "x": 842.5,
@@ -108,10 +115,11 @@ export default [
     {
         id: "7",
         data: {
-            label: "7",
-            mbti: "ENTJ",
-            redditPosts: 450,
-            influenceIndex: 1
+            label: "Ellea",
+            mbti: "ISFP",
+            tweets: 6824,
+            influenceIndex: 12,
+            influenceDistrib: 5326/134978
         },
         position: {
             "x": 1017.5,
@@ -123,10 +131,11 @@ export default [
     {
         id: "8",
         data: {
-            label: "8",
-            mbti: "ENTJ",
-            redditPosts: 450,
-            influenceIndex: 1
+            label: "Jack",
+            mbti: "ISTP",
+            tweets: 677,
+            influenceIndex: 11,
+            influenceDistrib: 13503/134978
         },
         position: {x: 819.5, y: 460},
         type: "default",
@@ -135,10 +144,11 @@ export default [
     {
         id: "9",
         data: {
-            label: "9",
-            mbti: "ENTJ",
-            redditPosts: 450,
-            influenceIndex: 1
+            label: "Jacob",
+            mbti: "ESTJ",
+            tweets: 450,
+            influenceIndex: 9,
+            influenceDistrib: 4970/134978
         },
         position: {x: 808.5, y: 378},
         type: "default",
@@ -147,10 +157,11 @@ export default [
     {
         id: "10",
         data: {
-            label: "10",
-            mbti: "ENTJ",
-            redditPosts: 450,
-            influenceIndex: 1
+            label: "David",
+            mbti: "ESTP",
+            tweets: 578,
+            influenceIndex: 10,
+            influenceDistrib: 4025/134978
         },
         position: {
             "x": 750.5,
@@ -162,10 +173,11 @@ export default [
     {
         id: "11",
         data: {
-            label: "11",
-            mbti: "ENTJ",
-            redditPosts: 450,
-            influenceIndex: 1
+            label: "Luke",
+            mbti: "ESFJ",
+            tweets: 80696,
+            influenceIndex: 14,
+            influenceDistrib: 4774/134978
         },
         position: {
             "x": 650.5,
@@ -177,10 +189,11 @@ export default [
     {
         id: "12",
         data: {
-            label: "12",
-            mbti: "ENTJ",
-            redditPosts: 450,
-            influenceIndex: 1
+            label: "Richard",
+            mbti: "ISTJ",
+            tweets: 87,
+            influenceIndex: 7,
+            influenceDistrib: 4434/134978
         },
         position: {
             "x": 434.5,
@@ -192,10 +205,11 @@ export default [
     {
         id: "13",
         data: {
-            label: "13",
-            mbti: "ENTJ",
-            redditPosts: 450,
-            influenceIndex: 1
+            label: "Fred",
+            mbti: "ENTP",
+            tweets: 164,
+            influenceIndex: 8,
+            influenceDistrib: 10439/134978
         },
         position: {
             "x": 611.5,
@@ -207,10 +221,11 @@ export default [
     {
         id: "14",
         data: {
-            label: "14",
-            mbti: "ENTJ",
-            redditPosts: 450,
-            influenceIndex: 1
+            label: "Kelly",
+            mbti: "INTJ",
+            tweets: 59,
+            influenceIndex: 6,
+            influenceDistrib: 5771/134978
         },
         position: { x: 389.5, y: 497 },
         type: "default",
@@ -221,7 +236,6 @@ export default [
         target: '1',
         source: '0',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -229,7 +243,6 @@ export default [
         target: '1',
         source: '14',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -237,7 +250,6 @@ export default [
         target: '1',
         source: '12',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -245,7 +257,6 @@ export default [
         target: '1',
         source: '13',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -253,7 +264,6 @@ export default [
         target: '11',
         source: '14',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -261,7 +271,6 @@ export default [
         target: '11',
         source: '13',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -269,7 +278,6 @@ export default [
         target: '11',
         source: '12',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -277,7 +285,6 @@ export default [
         target: '1',
         source: '10',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -285,7 +292,6 @@ export default [
         target: '1',
         source: '9',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -293,7 +299,6 @@ export default [
         target: '1',
         source: '8',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -301,7 +306,6 @@ export default [
         target: '1',
         source: '6',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -309,7 +313,6 @@ export default [
         target: '11',
         source: '8',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -317,7 +320,6 @@ export default [
         target: '11',
         source: '6',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -325,7 +327,6 @@ export default [
         target: '7',
         source: '10',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -333,7 +334,6 @@ export default [
         target: '7',
         source: '9',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -341,7 +341,6 @@ export default [
         target: '7',
         source: '8',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -349,7 +348,6 @@ export default [
         target: '7',
         source: '2',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -357,7 +355,6 @@ export default [
         target: '7',
         source: '6',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -365,7 +362,6 @@ export default [
         target: '6',
         source: '3',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -373,7 +369,6 @@ export default [
         target: '6',
         source: '4',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
     {
@@ -381,7 +376,6 @@ export default [
         target: '6',
         source: '5',
         type: 'floating',
-        label: '1',
         arrowHeadType: ArrowHeadType.Arrow,
     },
 ]
