@@ -16,6 +16,7 @@ export default () => {
             <Breadcrumb.Item active>Introduction</Breadcrumb.Item>
           </Breadcrumb>
           <h2>Friend Finder: Make your friendship tangible</h2>
+          Preseneted by Yubo Chen, Hayden Yan, Zeyu Hu, Robert Wan
         </div>
       </div>
       <div>

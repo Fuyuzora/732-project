@@ -55,7 +55,7 @@ export const DataInteractionForm = () => {
   const [primaryElement, setPrimaryElement] = useState(elements[0])
   const [secondaryElement, setSecondaryELement] = useState(elements[1])
   const [psFriendRate, setPSFriendRate] = useState(0)
-  const [showSearchResults, setShowSearchResults] = useState(true)
+  const [showSearchResults, setShowSearchResults] = useState(false)
   const [forceReRender, setForceReRender] = useState(0)
   const ref = useRef()
 

@@ -99,7 +99,7 @@ const NodeGraph = () => {
                         <p>Name: {currentNode.data.label}</p>
                         <p>Personality: {currentNode.data.mbti}</p>
                         <p>Twitter post count: {currentNode.data.tweets}</p>
-                        <p>Influence Index: {currentNode.data.influenceIndex}</p>
+                        <p>Influence Rank: {currentNode.data.influenceIndex}</p>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button variant="link" className="text-gray ms-auto" onClick={handleClose}>

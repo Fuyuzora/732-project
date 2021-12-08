@@ -83,7 +83,7 @@ export const CounterWidget = (props) => {
               <h5>{label}</h5>
               <h3 className="mb-1">{tweets}</h3>
             </div>
-            <small>{mbti}, Influencial Group {influenceIndex}</small>
+            <small>{mbti}, Influencial Rank {influenceIndex}</small>
           </Col>
         </Row>
       </Card.Body>
