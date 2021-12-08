@@ -1,0 +1,2 @@
+rm -rf data/preprocessed
+python preprocessing.py
