@@ -2,27 +2,28 @@ import React, { useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { Col, Row, Card, Breadcrumb, Image, Form, Button } from '@themesberg/react-bootstrap'
-import raw_data from '../assets/img/raw_data.png'
-import inertia_vs_k from '../assets/img/inertia vs k.png'
+import raw_features from '../assets/img/raw_data.png'
 import fig_keans from '../assets/img/fig_kmeans.png'
 import normalized_data from '../assets/img/normalized_data.png'
+import raw_data from '../assets/img/raw_data_all_columns.png'
+import centers from '../assets/img/centers.png'
 import centerData from '../data/center_location.json'
 import Collapse from 'react-bootstrap/Collapse'
 
 export default () => {
   const [cluster, setCluster] = useState(0)
-  const [showResult, setShowResult] = useState(true)
+  const [showResult, setShowResult] = useState(false)
   const getCluster = (a, b, c, d, e) => {
     let g = 0
     let curL2Dist = Infinity
     centerData.map((el, id) => {
-      let l2Dist = (a - el.followers_count)**2 + (b - el.following_count)**2 + (c - el.post_count)**2 + (d - el.listed_count)**2 + (e - el.active_date)**2
+      let l2Dist = (a - el.followers_count) ** 2 + (b - el.following_count) ** 2 + (c - el.post_count) ** 2 + (d - el.listed_count) ** 2 + (e - el.active_date) ** 2
       if (l2Dist < curL2Dist) {
         curL2Dist = l2Dist
         g = id
       }
     })
-    return g+1
+    return g + 1
   }
 
   const onSubmit = e => {
@@ -48,13 +49,25 @@ export default () => {
         </div>
       </div>
       <div>
-        <h5>Raw Data</h5>
+        <h5 className='mt-4'>Raw Data</h5>
         <p>The most raw data we gathered from GitHub user <a href='https://github.com/jonbruner/twitter-analysis'>@jonbruner</a>, who extracted it earlier from Twitter</p>
+        <Row className="justify-content-md-center">
+          <Col md={6}>
+            <Card border="light" className="shadow-sm">
+              <Card.Body>
+                <Image src={raw_data} />
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </div>
+      <div>
+        <h5>Raw Features</h5>
         <Row className="justify-content-md-center">
           <Col md={8}>
             <Card border="light" className="shadow-sm">
               <Card.Body>
-                <Image src={raw_data} />
+                <Image src={raw_features} />
               </Card.Body>
             </Card>
           </Col>
@@ -75,10 +88,22 @@ export default () => {
       <div>
         <h5 className='mt-4'>2D Visualization</h5>
         <Row className="justify-content-md-center">
-          <Col md={8}>
+          <Col md={7}>
             <Card border="light" className="shadow-sm">
               <Card.Body>
                 <Image src={fig_keans} />
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </div>
+      <div>
+        <h5 className='mt-4'>Centers with cluter and ranking</h5>
+        <Row className="justify-content-md-center">
+          <Col md={8}>
+            <Card border="light" className="shadow-sm">
+              <Card.Body>
+                <Image src={centers} />
               </Card.Body>
             </Card>
           </Col>
