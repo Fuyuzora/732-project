@@ -54,3 +54,5 @@ To run with yarn, first navigate to the frontend folder:
 ```
 yarn start
 ```
+The following node version is required
+Node=14.15.5
