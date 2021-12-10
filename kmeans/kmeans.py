@@ -3,7 +3,7 @@ import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
+# import seaborn as sns
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
@@ -84,7 +84,7 @@ center['rank'] = uniq + 1
 # export json
 center.to_json('center_location.json', orient='records', lines=True)
 
-center
+print(center)
 
 # %%
 ranking = pd.DataFrame(columns=['cluster','rank'])
