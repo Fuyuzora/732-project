@@ -22,7 +22,6 @@ mbti:
         |- mbti_1.csv
         |- preprocessed
             |- mbti.csv
-            |- tweets.csv
 ```
 
 To generate data navigate to mbti directory, copy mbti_1.csv and users.csv to data directory and run
