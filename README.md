@@ -12,12 +12,16 @@ kmeans:
 mbti:
     |- preprocessing
     |- preprocessing.py
+    |- MBTIClassifier.py (NN solution)
+    |- MBTIDataset.py (NN solution)
+    |- mbti_auto.py (NN solution, run this for easier fine tuning)
+    |- mbti_manual.py (NN solution, run this for best performance acc=0.68)
+    |- SVC.py (SVC solution, acc=0.68)
+    |- mbti_1.csv.zip (datasets, should be unziped and placed in data folder)
     |- data
         |- mbti_1.csv
-        |- users.csv
         |- preprocessed
             |- mbti.csv
-            |- tweets.csv
 ```
 
 To generate data navigate to mbti directory, copy mbti_1.csv and users.csv to data directory and run
@@ -54,3 +58,5 @@ To run with yarn, first navigate to the frontend folder:
 ```
 yarn start
 ```
+The following node version is required
+Node=14.15.5
