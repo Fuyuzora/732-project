@@ -3,7 +3,15 @@
 data folder structure:
 ```
 PySpark:  
-    |- ETL_result        
+    |- ETL_result  
+        |- part-00000-26005234-573b-40dd-bc2c-cfeebc247dce-c000.csv
+        |- part-00001-26005234-573b-40dd-bc2c-cfeebc247dce-c000.csv
+        |- part-00002-26005234-573b-40dd-bc2c-cfeebc247dce-c000.csv
+        |- part-00003-26005234-573b-40dd-bc2c-cfeebc247dce-c000.csv
+        |- part-00004-26005234-573b-40dd-bc2c-cfeebc247dce-c000.csv
+        |- part-00005-26005234-573b-40dd-bc2c-cfeebc247dce-c000.csv
+        |- part-00006-26005234-573b-40dd-bc2c-cfeebc247dce-c000.csv
+        |- part-00007-26005234-573b-40dd-bc2c-cfeebc247dce-c000.csv
     |- users.csv
     |- data_etl.py
 kmeans:
