@@ -23,12 +23,17 @@ mbti:
     |- mbti_1.csv.zip (datasets, should be unziped and placed in data folder)
     |- data
         |- mbti_1.csv
+        |- preprocessed
+            |- mbti.csv
 ```
 
 To generate data navigate to mbti directory, copy mbti_1.csv and users.csv to data directory and run
 ```
 bash processing
 ```
+
+## Twitter Networking Analysis:
+
 
 ## ETL
 
