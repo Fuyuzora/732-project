@@ -26,6 +26,13 @@ bash processing
 
 Write a brief discription and get starting code here
 
+## ETL
+
+To run the .py file:
+```
+spark-submit data_etl.py
+```
+
 ## K-Means
 
 To run the .py file:
