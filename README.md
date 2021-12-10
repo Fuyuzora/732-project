@@ -6,7 +6,9 @@ PySpark:
     |- users.csv
     |- data_etl.py
 kmeans:
+    |- center_location.json
     |- fig_kmeans.png
+    |- frame_with_ranking.csv
     |- kmeans.ipynb
     |- kmeans.py
 mbti:
@@ -42,7 +44,7 @@ spark-submit data_etl.py
 
 ## K-Means
 
-To run the .py file:
+Run the .py file to train the model :
 ```
 python3 kmeans.py
 ```
