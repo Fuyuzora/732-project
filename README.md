@@ -2,7 +2,8 @@
 ## MBTI: Predict the MBTI personalities of the commenters given tweets
 data folder structure:
 ```
-PySpark:    
+PySpark:  
+    |- ETL_result        
     |- users.csv
     |- data_etl.py
 kmeans:
