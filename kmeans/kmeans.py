@@ -27,14 +27,8 @@ for f in dir_contents:
         df = pd.concat([df, df1])
 
 # %%
-df.isnull().sum()
-
-# %%
 df.dropna(subset = ['account_id'], inplace=True)
 df['active_date'].fillna(df['active_date'].mean(), inplace=True)
-df.info()
-
-# %%
 df['post_count'] = df['post_count'].astype(float)
 df['listed_count'] = df['listed_count'].astype(float)
 print(df.info())
@@ -52,11 +46,11 @@ print('Normalized Features')
 print(features_norm.head())
 
 # %%
-# use PCA to convert dimension to 2
+# use PCA to reduce dimensionality
 pca = PCA(2)
 data = pca.fit_transform(features_norm)
 
-# fitting multiple k-means algorithms
+# fit k-means
 k = 15
 model = KMeans(n_clusters = k, init='k-means++')
 model.fit(data)
